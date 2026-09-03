@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orcamento Assistencia Tecnica</title>
+<title>Orçamento Assistência Técnica</title>
 
 <style>
 body {
@@ -32,7 +32,7 @@ label {
     display: block;
 }
 
-select, textarea {
+select, textarea, input[type="text"], input[type="file"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -68,66 +68,52 @@ button:hover {
 <body>
 
 <div class="container">
-    <h2>Solicitar Orcamento</h2>
+    <h2>Solicitar Orçamento</h2>
 
     <label>Aparelho</label>
     <select id="aparelho">
         <option>Geladeira</option>
-        <option>Maquina de Lavar</option>
+        <option>Máquina de Lavar</option>
         <option>Tanquinho</option>
         <option>Freezer</option>
         <option>Micro-ondas</option>
         <option>Outro</option>
     </select>
 
-    <label>Marca</label>
-    <select id="marca">
-        <option>Consul</option>
-        <option>Electrolux</option>
-        <option>Brastemp</option>
-        <option>Midea</option>
-        <option>Colormaq</option>
-        <option>Philco</option>
-        <option>Philips</option>
-        <option>Outro</option>
-    </select>
-
     <label>Problema</label>
     <select id="problema">
-        <option>Nao esta gelando</option>
+        <option>Não está gelando</option>
         <option>Motor parou</option>
-        <option>Nao esta enchendo de agua</option>
+        <option>Não está enchendo de água</option>
         <option>Fazendo barulho</option>
-        <option>Nao liga</option>
+        <option>Não liga</option>
         <option>Outro problema</option>
     </select>
 
     <label>Descreva o problema</label>
     <textarea id="descricao" rows="4" placeholder="Explique o defeito..."></textarea>
 
-    <button onclick="enviarWhats()">Enviar Orçamento</button>
+    <button onclick="enviarWhats()">Enviar  Orçamento</button>
 
     <div class="footer">
-        Atendimento rapido pelo WhatsApp
+        Atendimento rápido pelo WhatsApp
     </div>
 </div>
 
 <script>
 function enviarWhats() {
     var aparelho = document.getElementById("aparelho").value;
-    var marca = document.getElementById("marca").value;
     var problema = document.getElementById("problema").value;
     var descricao = document.getElementById("descricao").value;
 
-    var texto =
-        "📋 *Solicitação de Orçamento*\n\n" +
-        "*Aparelho:* " + aparelho + "\n" +
-        "*Marca:* " + marca + "\n" +
-        "*Problema:* " + problema + "\n" +
+    var texto = 
+        "📋 *Solicitação de Orçamento*%0A%0A" +
+        "*Aparelho:* " + aparelho + "%0A" +
+        "*Problema:* " + problema + "%0A" +
         "*Descrição:* " + descricao;
 
-    var telefone = "5598981780953";
-    var url = "https://wa.me/" + telefone + "?text=" + encodeURIComponent(texto);
+    var telefone = "5598985144525";
+    var url = "https://wa.me/" + telefone + "?text=" + texto;
 
     window.open(url, "_blank");
 }
@@ -135,5 +121,3 @@ function enviarWhats() {
 
 </body>
 </html>
-
-
